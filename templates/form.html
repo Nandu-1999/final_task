@@ -1,0 +1,204 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Registration</title>
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <script language="javascript" type="text/javascript">
+    function dynamicdropdown(listindex)
+    {
+        switch (listindex)
+        {
+        case "TVM" :
+            document.getElementById("status").options[0]=new Option("Select status","");
+            document.getElementById("status").options[1]=new Option("VARKALA","Varkala");
+            document.getElementById("status").options[2]=new Option("PARASHALA","Parashala");
+            break;
+        case "QLN" :
+            document.getElementById("status").options[0]=new Option("Select status","");
+            document.getElementById("status").options[1]=new Option("PUNALUR","Punalur");
+            document.getElementById("status").options[2]=new Option("KOTTARAKARA","Kottarakara");
+            break;
+        case "PTA" :
+            document.getElementById("status").options[0]=new Option("Select status","");
+            document.getElementById("status").options[1]=new Option("THIRUVALLA","Thiruvalla");
+            document.getElementById("status").options[2]=new Option("ADOOR","Adoor");
+            break;
+       case "IDK" :
+            document.getElementById("status").options[0]=new Option("Select status","");
+            document.getElementById("status").options[1]=new Option("MUNNAR","Munnar");
+            document.getElementById("status").options[2]=new Option("THODUPUZHA","Thodupuzha");
+            break;
+       case "KTYM" :
+            document.getElementById("status").options[0]=new Option("Select status","");
+            document.getElementById("status").options[1]=new Option("CHANGANACHERRY","Changanacherry");
+            document.getElementById("status").options[2]=new Option("PALA","Pala");
+            break;
+       case "ALLP" :
+            document.getElementById("status").options[0]=new Option("Select status","");
+            document.getElementById("status").options[1]=new Option("AMBALAPUZHA","Ambalapuzha");
+            document.getElementById("status").options[2]=new Option("CHERTHALA","Cherthala");
+            break;
+       case "EKM" :
+            document.getElementById("status").options[0]=new Option("Select status","");
+            document.getElementById("status").options[1]=new Option("ALUVA","Aluva");
+            document.getElementById("status").options[2]=new Option("EDAPALLY","Edapally");
+            break;
+       case "TCR" :
+            document.getElementById("status").options[0]=new Option("Select status","");
+            document.getElementById("status").options[1]=new Option("GURUVAYOOR","Guruvayoor");
+            document.getElementById("status").options[2]=new Option("CHALAKUDY","Chalakudy");
+            break;
+       case "PGT" :
+            document.getElementById("status").options[0]=new Option("Select status","");
+            document.getElementById("status").options[1]=new Option("OTTAPALAM","Ottapalam");
+            document.getElementById("status").options[2]=new Option("PATTAMBI","Pattambi");
+            break;
+       case "MLPM" :
+            document.getElementById("status").options[0]=new Option("Select status","");
+            document.getElementById("status").options[1]=new Option("TIRUR","Tirur");
+            document.getElementById("status").options[2]=new Option("PERINTALMANNA","Perintalmanna");
+            break;
+       case "CLT" :
+            document.getElementById("status").options[0]=new Option("Select status","");
+            document.getElementById("status").options[1]=new Option("VADAKARA","Vadakara");
+            document.getElementById("status").options[2]=new Option("FEROK","Ferok");
+            break;
+       case "WYND" :
+            document.getElementById("status").options[0]=new Option("Select status","");
+            document.getElementById("status").options[1]=new Option("KALPETTA","Kalpetta");
+            document.getElementById("status").options[2]=new Option("MANANTHAVADY","Mananthavady");
+            break;
+       case "CAN" :
+            document.getElementById("status").options[0]=new Option("Select status","");
+            document.getElementById("status").options[1]=new Option("PAYYANUR","Payyanur");
+            document.getElementById("status").options[2]=new Option("THALASERRY","Thalaserry");
+            break;
+       case "KGQ" :
+            document.getElementById("status").options[0]=new Option("Select status","");
+            document.getElementById("status").options[1]=new Option("NILESHWAR","Nileshwar");
+            document.getElementById("status").options[2]=new Option("KANHANGAD","Kanhangad");
+            break;
+       }
+       return true;
+    }
+    </script>
+</head>
+<body>
+<div id="container_1">
+
+  <h1 id="title">
+  Account Registration Form
+</h1><!--title-->
+<p id="description">
+  Enter the required data in the boxes.
+</p><!--description--->
+
+</div><!---container_1--->
+<div id="container_2">
+
+  <form id="app-form" action="logout" method="post">
+    {% csrf_token %}
+    <label id="name-label">Name</label>
+      <input type="text" id="name" name="name" class="form" required placeholder="Insert your name"><br><!--name--->
+    <label id="dob-label">Date of Birth</label>
+      <input type="date" id="dob" name="dob" class="form" required placeholder="Insert your Date of Birth"><br><!--dob--->
+    <label id="number-label">Age</label>
+      <input type="number" id="number" name="number" class="form" placeholder="Age" min=18 max=60 required><br><!---number-->
+    <label id="email-label">Email</label>
+      <input type="email" id="email" name="email" class="form" required placeholder="Insert your email"><br><!---email-->
+    <label id="phone">Phone Number</label>
+    <input type="number" id="phone-number" name="phone" class="form" required placeholder="Insert your phone number"><br><!---phone-->
+    <!--dropdown--->
+    <p>Gender</p>
+    <label>
+      <input type="radio" name="genre" value="Male">Male
+    </label>
+    <label>
+      <input type="radio" name="genre" value="Female">Female
+    </label>
+    <label>
+      <input type="radio" name="genre" value="Other">I prefer not to answer
+    </label><!---radioButtons--->
+    <p>Materials provided</p>
+    <label>
+      <input type="checkbox" name="mode" value="Debit Card">Debit Card
+    </label>
+    <label>
+      <input type="checkbox" name="mode" value="Credit Card">Credit Card
+    </label>
+    <label>
+      <input type="checkbox" name="mode" value="Cheque Book">Cheque Book
+    </label><br><br>
+      <label id="carrer">Account Type</label>
+    <select id="dropdown" name="role" required>
+      <option disabled selected value>
+        Select your account type
+      </option>
+      <option value="ISC">
+        Savings Account
+      </option>
+      <option value="IMA">
+        Current Account
+      </option>
+      <option value="II">
+        Fixed Deposit Account
+      </option>
+      <option value="IGE">
+        Recurring Deposit Account
+      </option>
+    </select><!--dropdown--->
+    <p>Address</p>
+      <textarea
+        id="comments"
+        name="comment"
+        placeholder="Enter your address here..."
+      ></textarea><!---comment-->
+
+     <div class="category_div" id="category_div">DISTRICT:
+        <select id="source" name="source" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+        <option value="">Select District</option>
+         <option value="TVM">THIRUVANANTHAPURAM</option>
+        <option value="QLN">KOLLAM</option>
+        <option value="PTA">PATHANAMTHITTA</option>
+        <option value="IDK">IDUKKI</option>
+        <option value="ALLP">ALAPPUZHA</option>
+        <option value="KTYM">KOTTAYAM</option>
+        <option value="EKM">ERNAKULAM</option>
+        <option value="TCR">THRISSUR</option>
+        <option value="PKD">PALAKKAD</option>
+        <option value="MLPM">MALAPPURAM</option>
+        <option value="CLT">KOZHIKODE</option>
+       <option value="WYND">WAYANAD</option>
+       <option value="CAN">KANNUR</option>
+       <option value="KGQ">KASARGOD</option>
+        </select>
+    </div>
+    <div class="sub_category_div" id="sub_category_div">BRANCH:
+        <script type="text/javascript" language="JavaScript">
+        document.write('<select name="status" id="status"><option value="">Select Branch</option></select>')
+        </script>
+        <noscript>
+        <select id="status" name="status">
+            <option value="Varkala">Varkala</option>
+            <option value="Parashala">Parashala</option>
+        </select>
+        </noscript>
+    </div>
+    <input type="submit" id="submit" name="submit" value="Submit">
+    <input type="submit" class="logout" name="logout" value="Logout"><a href="/logout"></a>
+  </form><!---survey-form--->
+</div><!--container_2--->
+       <div id="popup" class="pop_card">
+    <p>Application submitted</p>
+    <p>Click here to return to Homepage</p>
+    <a href="/">
+        <button id="closePopup">Close</button>
+    </a>
+       </div>
+          <div id="overlay"></div>
+
+<script src="{% static 'js/form.js' %}"></script>
+</body>
+</html>
